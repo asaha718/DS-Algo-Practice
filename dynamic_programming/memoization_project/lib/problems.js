@@ -17,7 +17,7 @@
 // lucasNumberMemo(42)  // => 599074578
 function lucasNumberMemo(n, memo = {}) {
     if (n in memo) return memo[n]; 
-    if(n===0) return 2; 
+    if(n===0) return 2; // base cases
     if(n===1) return 1; 
 
     memo[n]= lucasNumberMemo(n-1, memo)+lucasNumberMemo(n-2, memo); 
@@ -40,7 +40,19 @@ function lucasNumberMemo(n, memo = {}) {
 // minChange([1, 5, 10, 25], 15)    // => 2, because 10 + 5 = 15
 // minChange([1, 5, 10, 25], 100)   // => 4, because 25 + 25 + 25 + 25 = 100
 function minChange(coins, amount, memo = {}) {
+    if (amount in memo) return memo[amount]; //amount is changing so we want that to be the key 
+    if (amount === 0) return 0; //base case
 
+    let result=[]; //using to store value of how many coins it takes to get to 0
+    coins.forEach(coin => { 
+        if(coin <= amount){ 
+            result.push(minChange(coins, amount-coin, memo) +1 ) // adding one to base case so we get a count
+        }
+    }); 
+
+    memo[amount]= Math.min(...result); // save your brute force approach to the key 
+
+    return memo[amount]
 }
 
 
