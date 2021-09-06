@@ -1,5 +1,7 @@
-//  Selection sort selects the smallest elements of the array and directly places 
+// Selection sort selects the smallest elements of the array and directly places 
 // them at the beginning of the array in sorted position
+// O(n^2) time complexity
+// O(1) space complexity
 
 selection_sort= (arr)=> { 
 
