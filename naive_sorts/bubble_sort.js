@@ -4,6 +4,8 @@
 // second. This way during each pass through the array, the
 // largest value “bubbles up” to the top, and after each 
 // pass the elements furthest to the right are in the correct order.
+// O(n^2) time complexity
+// O(1) space complexity (in place)
 
 bubble_sort= (arr) => { 
     let sorted= false; 

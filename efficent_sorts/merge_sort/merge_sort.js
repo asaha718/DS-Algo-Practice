@@ -4,6 +4,8 @@
 // Idea is that you split a unsorted arr to 2 unsorted arrays. Sort the 2 
 // and merge them back to a sorted array
 
+//time O(n log n) space O(n)
+
 mergeSort= (arr)=> { 
     if(arr.length<=1){ 
         return arr; 
