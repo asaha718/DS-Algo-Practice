@@ -1,5 +1,8 @@
 //Easy to sort elements of an array relative to a particular target value
+// O(n^2) time complexity. Worst case we always pick largest or smallest 
+// pivot value so you keep having to sort for each value
 
+// O(n) space because each recursive call filters creating a new array. 
 const quickSort = (array) => {
   if (array.length <= 1) {
     return array;

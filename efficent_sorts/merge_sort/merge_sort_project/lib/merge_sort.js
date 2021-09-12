@@ -24,7 +24,7 @@ function mergeSort(array) {
     }
 
     let mid= Math.floor(array.length/2); 
-    let left= array.slice(0, mid);
+    let left= array.slice(0, mid); // slice doesnt include last parameter
     let right= array.slice(mid); 
     
     let sortL= mergeSort(left); 
