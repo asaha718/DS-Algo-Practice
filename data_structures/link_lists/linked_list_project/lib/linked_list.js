@@ -34,7 +34,7 @@ class LinkedList {
     constructor() {
         this.head= null; 
         this.tail= null; 
-        this.length=0; 
+        this.length= 0 ; 
     }
 
     // TODO: Implement the addToTail method here
@@ -91,12 +91,26 @@ class LinkedList {
 
     // TODO: Implement the removeHead method here
     removeHead() {
+        if(!this.head) return undefined; 
+        const removedHead= this.head; 
+        this.head= removedHead.next; 
 
+        this.length--; 
+        if(this.length === 0){
+            this.head= null;  
+            this.tail= null; 
+        }
+        return removedHead
     }
 
     // TODO: Implement the contains method here
     contains(target) {
-
+        let current= this.head
+        while(current){ 
+            if(current.value === target) return true
+            current= current.next
+        }
+        return false
     }
 
     // TODO: Implement the get method here
