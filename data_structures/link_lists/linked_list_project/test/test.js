@@ -49,7 +49,7 @@ describe('LinkedList', () => {
             linkedList.addToHead('A');
             expect(linkedList.length).to.equal(2);
             linkedList.insert(1, 'B');
-            expect(linkedList.length).to.equal(2);
+            expect(linkedList.length).to.equal(3);
             linkedList.remove(1);
             expect(linkedList.length).to.equal(2);
             linkedList.removeTail();
