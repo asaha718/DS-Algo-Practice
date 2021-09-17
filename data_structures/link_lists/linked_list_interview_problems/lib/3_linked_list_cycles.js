@@ -60,7 +60,16 @@
 // Let's code!
 // -----------
 function hasCycle(linkedList) {
-  // TODO: Implement the hasCycle function!
+  let visited= new Set(); 
+  let current= linkedList.head; 
+
+  while(current !== null){ 
+    if(visited.has(current)) return true; 
+    visited.add(current); 
+    current= current.next; 
+  }
+
+  return false; 
 
 }
 
